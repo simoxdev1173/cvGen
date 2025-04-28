@@ -1,16 +1,15 @@
-import { LoginForm } from "@/components/login-form"
-
+import { Routes, Route} from 'react-router-dom';
+import LandingPage from './LandingPage';
+import CvGenerator from './CvGenerator';
 
 function App() {
 
   return (
     <>
-       <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
-      <div className="w-full max-w-sm md:max-w-3xl">
-        <LoginForm />
-      </div>
-    </div>
-
+    <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/generate" element={<CvGenerator />} />
+    </Routes>
     </>
   )
 }
