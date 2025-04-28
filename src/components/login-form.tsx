@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-
+import githubLogo from '@/assets/github-mark-white.svg';
+import landingImage from '@/assets/cvGenLandingPageImg.png'
 interface LoginFormProps extends React.ComponentProps<"div"> {}
 
 
@@ -23,7 +24,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
               </div>
 
               <Button type="button" size="lg" className="w-full mt-4 shadow-md hover:shadow-lg transition-shadow duration-200">
-                <img src="./src/assets/github-mark-white.svg" className="mr-2 h-5 w-5" />
+                <img src={githubLogo} className="mr-2 h-5 w-5" />
                 Authenticate with GitHub
               </Button>
 
@@ -35,7 +36,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
 
           <div className="bg-muted relative hidden md:block">
             <img
-              src="./src/assets/cvGenLandingPageImg.png"
+              src={landingImage}
               alt="CV Generation Illustration"
               className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.3] dark:grayscale"
               onError={(e) => {
