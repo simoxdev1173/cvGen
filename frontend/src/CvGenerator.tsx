@@ -132,7 +132,7 @@ const CvGenerator = () => {
       <div ref={componentRef} className="max-w-3xl w-full space-y-6 print-container">
 
         {/* User Profile Card */}
-        <Card className="shadow-lg rounded-lg overflow-hidden print-card">
+        <Card className="shadow-lg rounded-lg overflow-hidden print-card bg-gray-100">
           <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-6 print-card-content">
             <img
               src={user.avatar_url}
@@ -156,7 +156,7 @@ const CvGenerator = () => {
         </Card>
 
         {/* Top Repositories Card */}
-        <Card className="shadow-md rounded-lg overflow-hidden print-card">
+        <Card className="shadow-md rounded-lg overflow-hidden print-card bg-gray-100">
           <CardContent className="p-6 print-card-content">
             <h2 className="text-xl font-semibold mb-4 text-gray-700">Top Repositories (by stars)</h2>
             {repos.length > 0 ? (
@@ -186,7 +186,7 @@ const CvGenerator = () => {
         </Card>
 
         {/* Contact & Info Card */}
-        <Card className="shadow-md rounded-lg overflow-hidden print-card">
+        <Card className="shadow-md rounded-lg overflow-hidden print-card bg-gray-100">
           <CardContent className="p-6 print-card-content">
             <h2 className="text-xl font-semibold mb-4 text-gray-700">Contact & Info</h2>
             <div className="space-y-2 text-gray-700">
@@ -203,13 +203,6 @@ const CvGenerator = () => {
         </Card>
 
       </div>
-       {/* Second print button (hidden in print) */}
-       <Button
-        className="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow transition duration-300 ease-in-out transform hover:-translate-y-1 print-hide"
-        onClick={handlePrint}
-      >
-        Download CV as PDF
-      </Button>
     </div>
   );
 };
