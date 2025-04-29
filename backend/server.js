@@ -29,7 +29,7 @@ app.get('/auth/github/callback', async (req, res) => {
       headers: { Authorization: `token ${access_token}` }
     });
 
-    const redirectUrl = `https://cvgen-bs2o.onrender.com/#/generate?token=${access_token}&user=${encodeURIComponent(JSON.stringify(userRes.data))}`;
+    const redirectUrl = `https://simoxdev1173.github.io/cvGen/#/generate?token=${access_token}&user=${encodeURIComponent(userRes.data)}`;
 
     // Redirect to the generate page
     res.redirect(redirectUrl);
