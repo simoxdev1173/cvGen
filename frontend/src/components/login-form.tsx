@@ -9,6 +9,15 @@ interface LoginFormProps extends React.ComponentProps<"div"> {}
 
 
 export function LoginForm({ className, ...props }: LoginFormProps) {
+    // GitHub OAuth URL construction
+    const clientId = "Ov23lilojEv110n1W0Bv"; // Replace with your GitHub client ID
+    const redirectUri = "https://cvgen-bs2o.onrender.com"; // Replace with your backend callback URL
+    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:user+repo`;
+  
+    // Redirect to GitHub OAuth when button is clicked
+    const handleGitHubAuth = () => {
+      window.location.href = githubAuthUrl;
+    };
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="overflow-hidden p-0 shadow-lg rounded-lg">
