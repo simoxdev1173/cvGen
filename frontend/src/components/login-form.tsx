@@ -11,8 +11,8 @@ interface LoginFormProps extends React.ComponentProps<"div"> {}
 export function LoginForm({ className, ...props }: LoginFormProps) {
     // GitHub OAuth URL construction
     const clientId = "Ov23lilojEv110n1W0Bv"; // Replace with your GitHub client ID
-    const redirectUri = "https://cvgen-bs2o.onrender.com"; // Replace with your backend callback URL
-    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:user+repo`;
+    const redirectUri = "https://cvgen-bs2o.onrender.com/auth/github/callback"; // Replace with your backend callback URL
+    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=https://cvgen-bs2o.onrender.com/auth/github/callback&scope=read:user+public_repo`;
   
     // Redirect to GitHub OAuth when button is clicked
     const handleGitHubAuth = () => {
@@ -32,7 +32,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
                 </p>
               </div>
 
-              <Button type="button" size="lg" className="w-full mt-4 shadow-md hover:shadow-lg transition-shadow duration-200">
+              <Button type="button" size="lg" className="w-full mt-4 shadow-md hover:shadow-lg transition-shadow duration-200" onClick={handleGitHubAuth}>
                 <img src={githubLogo} className="mr-2 h-5 w-5" />
                 Authenticate with GitHub
               </Button>

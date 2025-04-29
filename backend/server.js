@@ -29,10 +29,10 @@ app.get('/auth/github/callback', async (req, res) => {
       headers: { Authorization: `token ${access_token}` }
     });
 
-    res.json({
-      token: access_token,
-      user: userRes.data
-    });
+    const redirectUrl = `https://cvgen-bs2o.onrender.com/#/generate?token=${access_token}&user=${encodeURIComponent(JSON.stringify(userRes.data))}`;
+
+    // Redirect to the generate page
+    res.redirect(redirectUrl);
   } catch (error) {
     console.error(error.message);
     res.status(500).json({ error: 'Authentication failed' });
