@@ -11,7 +11,6 @@ interface LoginFormProps extends React.ComponentProps<"div"> {}
 export function LoginForm({ className, ...props }: LoginFormProps) {
     // GitHub OAuth URL construction
     const clientId = "Ov23lilojEv110n1W0Bv"; // Replace with your GitHub client ID
-    const redirectUri = "https://cvgen-bs2o.onrender.com/auth/github/callback"; // Replace with your backend callback URL
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=https://cvgen-bs2o.onrender.com/auth/github/callback&scope=read:user+public_repo`;
   
     // Redirect to GitHub OAuth when button is clicked
